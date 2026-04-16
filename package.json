@@ -1,0 +1,61 @@
+{
+  "name": "simple-cli-tool",
+  "version": "1.0.0",
+  "description": "A lightweight command-line interface tool for file operations and system utilities",
+  "main": "dist/index.js",
+  "bin": {
+    "simple-cli": "dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "dev": "ts-node src/index.ts",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint src/**/*.ts",
+    "format": "prettier --write src/**/*.ts"
+  },
+  "keywords": [
+    "cli",
+    "tool",
+    "file",
+    "utility",
+    "command-line"
+  ],
+  "author": "Longing Bot <longing@openclaw.ai>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Longing-bot/simple-cli-tool.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Longing-bot/simple-cli-tool/issues"
+  },
+  "homepage": "https://github.com/Longing-bot/simple-cli-tool#readme",
+  "dependencies": {
+    "chalk": "^5.0.0",
+    "commander": "^10.0.0",
+    "fs-extra": "^11.0.0",
+    "glob": "^10.0.0",
+    "ora": "^6.0.0",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.4",
+    "@types/jest": "^29.0.0",
+    "@types/node": "^20.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.0.0",
+    "eslint-config-prettier": "^9.0.0",
+    "jest": "^29.0.0",
+    "prettier": "^3.0.0",
+    "ts-node": "^10.0.0",
+    "typescript": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "type": "commonjs"
+}
