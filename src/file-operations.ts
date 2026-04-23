@@ -17,7 +17,7 @@ export async function createFile(filename: string, content: string = ''): Promis
   try {
     await fs.ensureDir(path.dirname(filename) || '.');
     await fs.writeFile(filename, content);
-  } catch (error: unknown) {
+  } catch (error: any) {
     const errorMessage = error instanceof Error ? error.message : 'Unknown error';
     throw new Error(`Failed to create file: ${errorMessage}`);
     throw new Error(`Failed to create file: ${error.message}`);
@@ -27,7 +27,7 @@ export async function createFile(filename: string, content: string = ''): Promis
 export async function readFile(filename: string): Promise<string> {
   try {
     return await fs.readFile(filename, 'utf8');
-  } catch (error: unknown) {
+  } catch (error: any) {
     const errorMessage = error instanceof Error ? error.message : 'Unknown error';
     throw new Error(`Failed to read file: ${errorMessage}`);
     throw new Error(`Failed to read file: ${error.message}`);
@@ -41,7 +41,7 @@ export async function deleteFile(filename: string): Promise<void> {
     } else {
       throw new Error('File does not exist');
     }
-  } catch (error: unknown) {
+  } catch (error: any) {
     const errorMessage = error instanceof Error ? error.message : 'Unknown error';
     throw new Error(`Failed to delete file: ${errorMessage}`);
     throw new Error(`Failed to delete file: ${error.message}`);
@@ -85,7 +85,7 @@ export async function searchFiles(directory: string, options: SearchOptions): Pr
     }
 
     return results.sort((a, b) => a.filename.localeCompare(b.filename));
-  } catch (error: unknown) {
+  } catch (error: any) {
     throw new Error(`Search failed: ${error.message}`);
   }
 }
@@ -107,7 +107,7 @@ export async function getFileSize(filename: string): Promise<number> {
   try {
     const stats = await fs.stat(filename);
     return stats.size;
-  } catch (error: unknown) {
+  } catch (error: any) {
     return 0;
   }
 }
@@ -115,7 +115,7 @@ export async function getFileSize(filename: string): Promise<number> {
 export async function listDirectory(dir: string): Promise<string[]> {
   try {
     return await fs.readdir(dir);
-  } catch (error: unknown) {
+  } catch (error: any) {
     return [];
   }
 }

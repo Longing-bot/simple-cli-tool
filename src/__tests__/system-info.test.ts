@@ -16,9 +16,9 @@ describe('System Info', () => {
   describe('formatBytes', () => {
     it('should format bytes correctly', () => {
       expect(formatBytes(0)).toBe('0 B');
-      expect(formatBytes(1024)).toBe('1.00 KB');
-      expect(formatBytes(1024 * 1024)).toBe('1.00 MB');
-      expect(formatBytes(1024 * 1024 * 1024)).toBe('1.00 GB');
+      expect(formatBytes(1024)).toBe('1 KB');
+      expect(formatBytes(1024 * 1024)).toBe('1 MB');
+      expect(formatBytes(1024 * 1024 * 1024)).toBe('1 GB');
     });
   });
 
